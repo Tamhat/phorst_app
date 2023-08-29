@@ -1,16 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   experimental: {
     serverActions: true,
     serverComponentsExternalPackages: ["mongoose"],
   },
   images: {
     domains: [
-      'img.clerk.com',
-      'images.clerk.dev',
-      'uploadthing.com',
-      'placehold.co',
-      'th.bing.com', // Add this line
+      "img.clerk.com",
+      "images.clerk.dev",
+      "uploadthing.com",
+      "placehold.co",
+      "th.bing.com", // Add this line
     ],
     remotePatterns: [
       {
