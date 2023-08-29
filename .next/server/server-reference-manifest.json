@@ -1,0 +1,37 @@
+{
+  "node": {
+    "e6a5e6c24abb55139acf8390c92d56ffc0e8e63b": {
+      "workers": {
+        "app/(root)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CHedayet%5C%5CDocuments%5C%5CProjects%5C%5CSocial-Media-App%5C%5Cthreads%5C%5Clib%5C%5Cactions%5C%5Cphorst.actions.ts%22%2C%5B%22createPhorst%22%2C%22fetchPosts%22%2C%22fetchPhorstById%22%2C%22addCommentToPhorst%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/(root)/page": "rsc"
+      }
+    },
+    "a9a124a1dea3ca2039d2087e9e60705462adb165": {
+      "workers": {
+        "app/(root)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CHedayet%5C%5CDocuments%5C%5CProjects%5C%5CSocial-Media-App%5C%5Cthreads%5C%5Clib%5C%5Cactions%5C%5Cphorst.actions.ts%22%2C%5B%22createPhorst%22%2C%22fetchPosts%22%2C%22fetchPhorstById%22%2C%22addCommentToPhorst%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/(root)/page": "rsc"
+      }
+    },
+    "0bf3a55bc88397b649c43e42e8645be950ab1bed": {
+      "workers": {
+        "app/(root)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CHedayet%5C%5CDocuments%5C%5CProjects%5C%5CSocial-Media-App%5C%5Cthreads%5C%5Clib%5C%5Cactions%5C%5Cphorst.actions.ts%22%2C%5B%22createPhorst%22%2C%22fetchPosts%22%2C%22fetchPhorstById%22%2C%22addCommentToPhorst%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/(root)/page": "rsc"
+      }
+    },
+    "bdb835741dbcb0de5289a888206bcb15b9c1033d": {
+      "workers": {
+        "app/(root)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CHedayet%5C%5CDocuments%5C%5CProjects%5C%5CSocial-Media-App%5C%5Cthreads%5C%5Clib%5C%5Cactions%5C%5Cphorst.actions.ts%22%2C%5B%22createPhorst%22%2C%22fetchPosts%22%2C%22fetchPhorstById%22%2C%22addCommentToPhorst%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/(root)/page": "rsc"
+      }
+    }
+  },
+  "edge": {}
+}
