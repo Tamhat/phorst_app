@@ -14,7 +14,7 @@ export async function fetchPosts(pageNumber = 1, pageSize = 20) {
   // Calculate the number of posts to skip based on the page number and page size.
   const skipAmount = (pageNumber - 1) * pageSize;
 
-  // Create a query to fetch the posts that have no parent (top-level phorsts) (a phorst that is not a comment/reply).
+  // Create a query to fetch the posts that have no parent (top-level phorst) (a phorst that is not a comment/reply).
   const postsQuery = Phorst.find({ parentId: { $in: [null, undefined] } })
     .sort({ createdAt: "desc" })
     .skip(skipAmount)
@@ -36,7 +36,7 @@ export async function fetchPosts(pageNumber = 1, pageSize = 20) {
       },
     });
 
-  // Count the total number of top-level posts (phorsts) i.e., phorsts that are not comments.
+  // Count the total number of top-level posts (phorst) i.e., phorst that are not comments.
   const totalPostsCount = await Phorst.countDocuments({
     parentId: { $in: [null, undefined] },
   }); // Get the total count of posts
@@ -136,19 +136,19 @@ export async function deletePhorst(id: string, path: string): Promise<void> {
       ].filter((id) => id !== undefined)
     );
 
-    // Recursively delete child phorsts and their descendants
+    // Recursively delete child phorst and their descendants
     await Phorst.deleteMany({ _id: { $in: descendantPhorstIds } });
 
     // Update User model
     await User.updateMany(
       { _id: { $in: Array.from(uniqueAuthorIds) } },
-      { $pull: { phorsts: { $in: descendantPhorstIds } } }
+      { $pull: { phorst: { $in: descendantPhorstIds } } }
     );
 
     // Update Community model
     await Community.updateMany(
       { _id: { $in: Array.from(uniqueCommunityIds) } },
-      { $pull: { phorsts: { $in: descendantPhorstIds } } }
+      { $pull: { phorst: { $in: descendantPhorstIds } } }
     );
 
     revalidatePath(path);

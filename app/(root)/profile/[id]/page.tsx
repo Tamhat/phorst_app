@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 
 import { profileTabs } from "@/constants";
 
-import PhorstsTab from "@/components/shared/PhorstsTab";
+import PhorstTab from "@/components/shared/PhorstTab";
 import ProfileHeader from "@/components/shared/ProfileHeader";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -28,23 +28,23 @@ async function Page({ params }: { params: { id: string } }) {
         bio={userInfo.bio}
       />
 
-      <div className='mt-9'>
-        <Tabs defaultValue='phorsts' className='w-full'>
-          <TabsList className='tab'>
+      <div className="mt-9">
+        <Tabs defaultValue="phorst" className="w-full">
+          <TabsList className="tab">
             {profileTabs.map((tab) => (
-              <TabsTrigger key={tab.label} value={tab.value} className='tab'>
+              <TabsTrigger key={tab.label} value={tab.value} className="tab">
                 <Image
                   src={tab.icon}
                   alt={tab.label}
                   width={24}
                   height={24}
-                  className='object-contain'
+                  className="object-contain"
                 />
-                <p className='max-sm:hidden'>{tab.label}</p>
+                <p className="max-sm:hidden">{tab.label}</p>
 
                 {tab.label === "Phorsts" && (
-                  <p className='ml-1 rounded-sm bg-light-4 px-2 py-1 !text-tiny-medium text-light-2'>
-                    {userInfo.phorsts.length}
+                  <p className="ml-1 rounded-sm bg-light-4 px-2 py-1 !text-tiny-medium text-light-2">
+                    {userInfo.phorst.length}
                   </p>
                 )}
               </TabsTrigger>
@@ -54,13 +54,13 @@ async function Page({ params }: { params: { id: string } }) {
             <TabsContent
               key={`content-${tab.label}`}
               value={tab.value}
-              className='w-full text-light-1'
+              className="w-full text-light-1"
             >
               {/* @ts-ignore */}
-              <PhorstsTab
+              <PhorstTab
                 currentUserId={user.id}
                 accountId={userInfo.id}
-                accountType='User'
+                accountType="User"
               />
             </TabsContent>
           ))}

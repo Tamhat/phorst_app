@@ -4,7 +4,7 @@ import { currentUser } from "@clerk/nextjs";
 import { communityTabs } from "@/constants";
 
 import UserCard from "@/components/cards/UserCard";
-import PhorstsTab from "@/components/shared/PhorstsTab";
+import PhorstTab from "@/components/shared/PhorstTab";
 import ProfileHeader from "@/components/shared/ProfileHeader";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -29,7 +29,7 @@ async function Page({ params }: { params: { id: string } }) {
       />
 
       <div className='mt-9'>
-        <Tabs defaultValue='phorsts' className='w-full'>
+        <Tabs defaultValue='phorst' className='w-full'>
           <TabsList className='tab'>
             {communityTabs.map((tab) => (
               <TabsTrigger key={tab.label} value={tab.value} className='tab'>
@@ -44,16 +44,16 @@ async function Page({ params }: { params: { id: string } }) {
 
                 {tab.label === "Phorsts" && (
                   <p className='ml-1 rounded-sm bg-light-4 px-2 py-1 !text-tiny-medium text-light-2'>
-                    {communityDetails.phorsts.length}
+                    {communityDetails.phorst.length}
                   </p>
                 )}
               </TabsTrigger>
             ))}
           </TabsList>
 
-          <TabsContent value='phorsts' className='w-full text-light-1'>
+          <TabsContent value='phorst' className='w-full text-light-1'>
             {/* @ts-ignore */}
-            <PhorstsTab
+            <PhorstTab
               currentUserId={user.id}
               accountId={communityDetails._id}
               accountType='Community'
@@ -77,7 +77,7 @@ async function Page({ params }: { params: { id: string } }) {
 
           <TabsContent value='requests' className='w-full text-light-1'>
             {/* @ts-ignore */}
-            <PhorstsTab
+            <PhorstTab
               currentUserId={user.id}
               accountId={communityDetails._id}
               accountType='Community'

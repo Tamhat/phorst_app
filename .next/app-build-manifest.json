@@ -1,15 +1,20 @@
 {
   "pages": {
+    "/(root)/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(root)/page.js"
+    ],
     "/(root)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/(root)/layout.css",
       "static/chunks/app/(root)/layout.js"
     ],
-    "/(root)/page": [
+    "/(root)/profile/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(root)/page.js"
+      "static/chunks/app/(root)/profile/[id]/page.js"
     ],
     "/(root)/search/page": [
       "static/chunks/webpack.js",
@@ -26,16 +31,41 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(root)/create-phorst/page.js"
     ],
+    "/(root)/communities/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(root)/communities/page.js"
+    ],
+    "/(root)/communities/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(root)/communities/[id]/page.js"
+    ],
+    "/(root)/phorst/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(root)/phorst/[id]/page.js"
+    ],
+    "/(auth)/sign-in/[[...sign-in]]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(auth)/sign-in/[[...sign-in]]/page.js"
+    ],
     "/(auth)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/(auth)/layout.css",
       "static/chunks/app/(auth)/layout.js"
     ],
-    "/(auth)/sign-in/[[...sign-in]]/page": [
+    "/(auth)/onboarding/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(auth)/sign-in/[[...sign-in]]/page.js"
+      "static/chunks/app/(auth)/onboarding/page.js"
+    ],
+    "/(auth)/sign-up/[[...sign-up]]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(auth)/sign-up/[[...sign-up]]/page.js"
     ]
   }
 }

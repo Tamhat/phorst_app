@@ -1020,6 +1020,9 @@ video {
 .min-h-\[80px\] {
   min-height: 80px;
 }
+.min-h-screen {
+  min-height: 100vh;
+}
 .w-10 {
   width: 2.5rem;
 }

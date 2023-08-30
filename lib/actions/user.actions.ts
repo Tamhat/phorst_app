@@ -66,7 +66,7 @@ export async function fetchUserPosts(userId: string) {
   try {
     connectToDB();
 
-    // Find all phorsts authored by the user with the given userId
+    // Find all phorst authored by the user with the given userId
     const phorsts = await User.findOne({ id: userId }).populate({
       path: "phorst",
       model: Phorst,

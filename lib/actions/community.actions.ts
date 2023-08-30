@@ -75,7 +75,7 @@ export async function fetchCommunityPosts(id: string) {
     connectToDB();
 
     const communityPosts = await Community.findById(id).populate({
-      path: "phorsts",
+      path: "phorst",
       model: Phorst,
       populate: [
         {
@@ -282,7 +282,7 @@ export async function deleteCommunity(communityId: string) {
       throw new Error("Community not found");
     }
 
-    // Delete all Phorsts associated with the community
+    // Delete all Phorst associated with the community
     await Phorst.deleteMany({ community: communityId });
 
     // Find all users who are part of the community
