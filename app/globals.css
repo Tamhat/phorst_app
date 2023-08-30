@@ -32,7 +32,7 @@
     @apply rounded-lg bg-primary-500 px-5 py-1.5 text-small-regular !text-light-1 !important;
   }
 
-  /* Phorst card  */
+  /* phorst card  */
   .phorst-card_bar {
     @apply relative mt-2 w-0.5 grow rounded-full bg-neutral-800;
   }
@@ -158,12 +158,4 @@
 
 .comment-form_btn {
   @apply rounded-3xl bg-primary-500 px-8 py-2 !text-small-regular text-light-1 max-xs:w-full !important;
-}
-
-.cl-organizationSwitcherTrigger, 
-.cl-internal-hhiw0n {
-  color: white;
-}
-.cl-organizationSwitcherTrigger .cl-open{
-  color: black!important;
 }

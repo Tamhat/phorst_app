@@ -1,4 +1,4 @@
-// File: C:\Users\Hedayet\Documents\Projects\Social-Media-App\threads\app\(root)\page.tsx
+// File: C:\Users\Hedayet\Downloads\threads-main (1)\threads-main\app\(root)\page.tsx
 import * as entry from '../../../../app/(root)/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

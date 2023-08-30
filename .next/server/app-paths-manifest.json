@@ -1,4 +1,7 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/(root)/page": "app/(root)/page.js"
+  "/(root)/page": "app/(root)/page.js",
+  "/(root)/search/page": "app/(root)/search/page.js",
+  "/(root)/activity/page": "app/(root)/activity/page.js",
+  "/(root)/create-phorst/page": "app/(root)/create-phorst/page.js",
+  "/(auth)/sign-in/[[...sign-in]]/page": "app/(auth)/sign-in/[[...sign-in]]/page.js"
 }

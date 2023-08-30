@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
 
 const phorstSchema = new mongoose.Schema({
-  text: { type: String, required: true },
+  text: {
+    type: String,
+    required: true,
+  },
   author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
@@ -15,15 +18,15 @@ const phorstSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  parentId:{
-    type: String
+  parentId: {
+    type: String,
   },
-    children: [
+  children: [
     {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Phorst",
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Phorst",
     },
-    ],
+  ],
 });
 
 const Phorst = mongoose.models.Phorst || mongoose.model("Phorst", phorstSchema);

@@ -1,11 +1,15 @@
-import PhorstCard from "@/components/cards/PhorstCard";
-import Comment from "@/components/forms/Comment";
-import { fetchPhorstById } from "@/lib/actions/phorst.actions";
-import { fetchUser } from "@/lib/actions/user.actions";
-import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+import { currentUser } from "@clerk/nextjs";
 
-const Page = async ({ params }: { params: { id: string } }) => {
+import Comment from "@/components/forms/Comment";
+import PhorstCard from "@/components/cards/PhorstCard";
+
+import { fetchUser } from "@/lib/actions/user.actions";
+import { fetchPhorstById } from "@/lib/actions/phorst.actions";
+
+export const revalidate = 0;
+
+async function page({ params }: { params: { id: string } }) {
   if (!params.id) return null;
 
   const user = await currentUser();
@@ -15,14 +19,13 @@ const Page = async ({ params }: { params: { id: string } }) => {
   if (!userInfo?.onboarded) redirect("/onboarding");
 
   const phorst = await fetchPhorstById(params.id);
-  
+
   return (
     <section className="relative">
       <div>
         <PhorstCard
-          key={phorst._id}
           id={phorst._id}
-          currentUserId={user?.id || ""}
+          currentUserId={user.id}
           parentId={phorst.parentId}
           content={phorst.text}
           author={phorst.author}
@@ -34,29 +37,30 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
       <div className="mt-7">
         <Comment
-         phorstId={phorst.id}
-          currentUserImg={userInfo.image}
+          phorstId={params.id}
+          currentUserImg={user.imageUrl}
           currentUserId={JSON.stringify(userInfo._id)}
         />
       </div>
 
       <div className="mt-10">
         {phorst.children.map((childItem: any) => (
-          <PhorstCard 
-          key={childItem._id}
-          id={childItem._id}
-          currentUserId={childItem?.id || ""}
-          parentId={childItem.parentId}
-          content={childItem.text}
-          author={childItem.author}
-          community={childItem.community}
-          createdAt={childItem.createdAt}
-          comments={childItem.children}
-          isComment
-        />
+          <PhorstCard
+            key={childItem._id}
+            id={childItem._id}
+            currentUserId={user.id}
+            parentId={childItem.parentId}
+            content={childItem.text}
+            author={childItem.author}
+            community={childItem.community}
+            createdAt={childItem.createdAt}
+            comments={childItem.children}
+            isComment
+          />
         ))}
       </div>
     </section>
   );
-};
-export default Page;
+}
+
+export default page;
